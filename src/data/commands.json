@@ -1,0 +1,2638 @@
+{
+  "Vanity": [
+    {
+      "name": "vanity set",
+      "brief": "set the channel for checking vanities",
+      "example": ",vanity set #vanity-updates"
+    },
+    {
+      "name": "vanity unset",
+      "brief": "unset the channel for checking vanities",
+      "example": ",vanity unset"
+    }
+  ],
+  "Automod": [
+    {
+      "name": "filter migrate",
+      "brief": "migrate filtered words to automod",
+      "example": null
+    },
+    {
+      "name": "filter images",
+      "brief": "enable or disable the image filter",
+      "example": "filter images true --threshold 5"
+    },
+    {
+      "name": "filter add",
+      "brief": "Add a filter word to the filter list",
+      "example": ",filter add stupid"
+    },
+    {
+      "name": "filter timeout",
+      "brief": "Set the amount of time someone will be muted when they break an automod rule",
+      "example": ",filter timeout 60s"
+    },
+    {
+      "name": "filter clear",
+      "brief": "Clear all words from the automod filter list",
+      "example": ",filter clear"
+    },
+    {
+      "name": "filter spoilers",
+      "brief": "Manage spoiler images being sent in the server",
+      "example": ",filter spoilers enable"
+    },
+    {
+      "name": "filter whitelist",
+      "brief": "Exempt roles, users, or channels from filtered automod settings or words",
+      "example": ",filter whitelist @sudosql --event spam"
+    },
+    {
+      "name": "filter links",
+      "brief": "Prevent all links from being sent in the server",
+      "example": ",filter links enable"
+    },
+    {
+      "name": "filter list",
+      "brief": "View a list of filtered words",
+      "example": ",filter list"
+    },
+    {
+      "name": "filter spam",
+      "brief": "Prevent users from laddering/spamming in the server",
+      "example": ",filter spam true --threshold 10"
+    },
+    {
+      "name": "filter reset",
+      "brief": "Reset all automod settings",
+      "example": ",filter reset"
+    },
+    {
+      "name": "filter emojis",
+      "brief": "Limit the amount of emojis that can be sent in one message",
+      "example": ",filter emojis true --threshold 3"
+    },
+    {
+      "name": "filter whitelisted",
+      "brief": "View a all users, roles and channels whitelisted through automod",
+      "example": ",filter whitelisted"
+    },
+    {
+      "name": "filter invites",
+      "brief": "Stop outside server invites from being sent in the guild",
+      "example": ",filter invites true"
+    },
+    {
+      "name": "filter nicknames",
+      "brief": "Automatically reset nicknames if a filtered word is detected",
+      "example": ",filter nicknames true"
+    },
+    {
+      "name": "filter caps",
+      "brief": "Limit how many capital letters can be sent in a single message",
+      "example": ",filter caps true --threshold 6"
+    },
+    {
+      "name": "filter setup",
+      "brief": "Setup the automod filtering for the guild",
+      "example": ",filter setup"
+    },
+    {
+      "name": "filter massmention",
+      "brief": "Prevent users from mentioning more than a set amount of members at once",
+      "example": ",filter massmention true --threshold 4"
+    },
+    {
+      "name": "filter headers",
+      "brief": "enable or disable the header filter",
+      "example": "filter headers true --threshold 5"
+    },
+    {
+      "name": "filter remove",
+      "brief": "Remove a filtered word from the filter list",
+      "example": ",filter remove stupid"
+    },
+    {
+      "name": "filter snipe",
+      "brief": "filter automod deleted messages from the snipe commands",
+      "example": ",filter snipe true"
+    },
+    {
+      "name": "filter punishment",
+      "brief": "Set the punishment for breaking automod rules",
+      "example": ",filter punishment delete"
+    },
+    {
+      "name": "filter settings",
+      "brief": "Show the current configuration of automod",
+      "example": ",filter settings"
+    },
+    {
+      "name": "filter punishments",
+      "brief": "View the current punishment for breaking automod rules",
+      "example": ",filter punishments"
+    }
+  ],
+  "Giveaway": [
+    {
+      "name": "giveaway template",
+      "brief": "set your default embed template for giveaways",
+      "example": ",giveaway template [embed_code]"
+    },
+    {
+      "name": "giveaway end",
+      "brief": "End a specific giveaway from that giveaway message",
+      "example": ",giveaway end 1234567890"
+    },
+    {
+      "name": "giveaway reroll",
+      "brief": "Reroll giveaway winners",
+      "example": ",giveaway reroll 1234567890"
+    },
+    {
+      "name": "giveaway dmcreator",
+      "brief": "Dm the creator when the giveaway has ended of the winner(s)",
+      "example": ",giveaway dmcreator true"
+    },
+    {
+      "name": "giveaway start",
+      "brief": "Create a giveaway",
+      "example": ",giveaway start 1h 1 $10"
+    },
+    {
+      "name": "giveaway blacklist",
+      "brief": "Blacklist a role from entering giveaways",
+      "example": ",giveaway blacklist @members"
+    },
+    {
+      "name": "giveaway setmax",
+      "brief": "Set a max entrie count users with a specific role",
+      "example": ",giveaway setmax 100"
+    },
+    {
+      "name": "giveaway dmwinners",
+      "brief": "dm the winners when the giveaway has ended",
+      "example": ",giveaway dmwinners true"
+    }
+  ],
+  "Gang": [
+    {
+      "name": "gang disband",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "gang delete",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "gang tag",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "gang transfer",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "gang info",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "gang invite",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "gang create",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "gang promote",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "gang toggle",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "gang leave",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "gang setbanner",
+      "brief": null,
+      "example": null
+    }
+  ],
+  "Starboard": [
+    {
+      "name": "starboard remove",
+      "brief": "remove a starboard from the starboard channel",
+      "example": ",starboard remove #shame \ud83e\udd21"
+    },
+    {
+      "name": "starboard add",
+      "brief": "Add a channel for the starboard to be set to, add an emoji for it to be saved when a message is reacted to with said emoji",
+      "example": ",starboard add #shame \ud83e\udd21 2"
+    },
+    {
+      "name": "starboard ignore",
+      "brief": "Ignore a channel from being added to the starboard",
+      "example": ",starboard ignore #shame"
+    },
+    {
+      "name": "starboard unignore",
+      "brief": "Unignore a channel from being added to the starboard",
+      "example": ",starboard unignore #shame"
+    },
+    {
+      "name": "starboard list",
+      "brief": "List all the Starboards currently set to the starboard channel",
+      "example": ",starboard list"
+    }
+  ],
+  "ai": [
+    {
+      "name": "ai",
+      "brief": null,
+      "example": null
+    }
+  ],
+  "Confessions": [
+    {
+      "name": "confessions channel",
+      "brief": "view statistics relating confessions",
+      "example": ",confessions channel"
+    },
+    {
+      "name": "confessions mute",
+      "brief": "mute a member that sent a specified confession",
+      "example": ",confessions mute @sudosql"
+    },
+    {
+      "name": "confessions unmute",
+      "brief": "unmute a member that sent a specified confession",
+      "example": "confessions unmute @sudosql"
+    },
+    {
+      "name": "confessions setup",
+      "brief": "Set the channel confessions will be sent to",
+      "example": ",confessions setup #confess"
+    },
+    {
+      "name": "confessions reset",
+      "brief": "Remove and disable the confessions module",
+      "example": ",confessions reset"
+    }
+  ],
+  "Card": [
+    {
+      "name": "card decos",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "card color",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "card deco",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "card font",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "usercard",
+      "brief": null,
+      "example": null
+    }
+  ],
+  "Fun": [
+    {
+      "name": "uwuify",
+      "brief": "uwuify a message",
+      "example": null
+    },
+    {
+      "name": "blacktea end",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "spark",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "smoke",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "taps",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "howgay",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "iq",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "bitches",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "vape hits",
+      "brief": "Show the total number of hits taken by the server",
+      "example": null
+    },
+    {
+      "name": "vape flavor",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "vape steal",
+      "brief": "Steal the vape from the current holder",
+      "example": null
+    },
+    {
+      "name": "caption",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "pp",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "roast",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "eightball",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "dominant",
+      "brief": "Get the most dominant color in a user's avatar",
+      "example": null
+    },
+    {
+      "name": "rotate",
+      "brief": "Rotate an image by a specified angle",
+      "example": null
+    },
+    {
+      "name": "compress",
+      "brief": "Compress an image to reduce its size",
+      "example": null
+    },
+    {
+      "name": "quickpoll",
+      "brief": "Create a quick yes/no poll",
+      "example": null
+    },
+    {
+      "name": "randomhex",
+      "brief": "Generate a random hex color",
+      "example": null
+    },
+    {
+      "name": "rps",
+      "brief": "Play rock, paper, scissors",
+      "example": null
+    },
+    {
+      "name": "choose",
+      "brief": "Choose between multiple options",
+      "example": null
+    },
+    {
+      "name": "wyr",
+      "brief": "Play a game of Would You Rather",
+      "example": null
+    },
+    {
+      "name": "nword",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "nwordlb",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "tictactoe",
+      "brief": "Play a game of Tic Tac Toe",
+      "example": null
+    },
+    {
+      "name": "image",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "diary create",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "diary delete",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "diary view",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "ship",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "nbacaption",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "poll",
+      "brief": "Create a poll with multiple options",
+      "example": null
+    }
+  ],
+  "Information": [
+    {
+      "name": "guilds_stats",
+      "brief": "View the member count of the server",
+      "example": ",membercount"
+    },
+    {
+      "name": "level",
+      "brief": "see your level in the server",
+      "example": ",level @aiohttp"
+    },
+    {
+      "name": "status",
+      "brief": "check on discord's status",
+      "example": null
+    },
+    {
+      "name": "reverse",
+      "brief": "Reverse search an image",
+      "example": null
+    },
+    {
+      "name": "timezone set",
+      "brief": "set a timezone via location or timezone",
+      "example": ",timezone set New York/et"
+    },
+    {
+      "name": "ping",
+      "brief": "Check the bot's latency",
+      "example": ",ping"
+    },
+    {
+      "name": "bans",
+      "brief": "Show banned users in the guild",
+      "example": ",bans"
+    },
+    {
+      "name": "color",
+      "brief": "get information about a color",
+      "example": ",color red"
+    },
+    {
+      "name": "botinfo",
+      "brief": "View the bot's detailed information and stats.",
+      "example": ",botinfo"
+    },
+    {
+      "name": "serverinfo",
+      "brief": "view information on the server",
+      "example": ",serverinfo"
+    },
+    {
+      "name": "created",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "invite",
+      "brief": null,
+      "example": "invite"
+    },
+    {
+      "name": "whois",
+      "brief": "View information on a user's account",
+      "example": ",userinfo @lim"
+    },
+    {
+      "name": "serveravatar",
+      "brief": null,
+      "example": ",serveravatar @lim"
+    },
+    {
+      "name": "banner",
+      "brief": "View the banner of a user",
+      "example": ",banner @lim"
+    },
+    {
+      "name": "serverbanner",
+      "brief": "View the server banner of a user",
+      "example": ",serverbanner @lim"
+    },
+    {
+      "name": "guildicon",
+      "brief": "View the icon of a server",
+      "example": ",guildicon"
+    },
+    {
+      "name": "guildbanner",
+      "brief": "View the banner of a server using its ID or vanity URL.",
+      "example": null
+    },
+    {
+      "name": "guildsplash",
+      "brief": "View the splash of a server",
+      "example": "guildsplash"
+    },
+    {
+      "name": "roles",
+      "brief": "View the server roles",
+      "example": ",roles"
+    },
+    {
+      "name": "clearnames",
+      "brief": "clear a user's name history",
+      "example": ",clearnames @lim"
+    },
+    {
+      "name": "names",
+      "brief": "show a user's name history",
+      "example": ",names @lim"
+    },
+    {
+      "name": "inrole",
+      "brief": "list all users that has a role",
+      "example": ",inrole admin"
+    },
+    {
+      "name": "roleinfo",
+      "brief": "Shows information on a role",
+      "example": ",roleinfo admin"
+    },
+    {
+      "name": "firstmessage",
+      "brief": "Get a link for the first message in a channel",
+      "example": null
+    },
+    {
+      "name": "inviteinfo",
+      "brief": "View information on an invite",
+      "example": null
+    },
+    {
+      "name": "invites",
+      "brief": "View all invites in the server",
+      "example": null
+    },
+    {
+      "name": "boosters lost",
+      "brief": "List all users who has recently stopped boosting the server",
+      "example": ",boosters lost"
+    },
+    {
+      "name": "emojis",
+      "brief": "List all emojis in the server",
+      "example": ",emojis"
+    },
+    {
+      "name": "bots",
+      "brief": "List all bots in the server",
+      "example": ",bots"
+    },
+    {
+      "name": "channelinfo",
+      "brief": "View information on a channel",
+      "example": ",channelinfo #txt"
+    },
+    {
+      "name": "urbandictionary",
+      "brief": "Lookup a words meaning using the urban dictionary",
+      "example": ",urbandictionary black"
+    },
+    {
+      "name": "boomer",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "avatar",
+      "brief": "avatar [user]",
+      "example": null
+    },
+    {
+      "name": "vote",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "buy",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "bible",
+      "brief": "Get a random bible verse",
+      "example": ",bible"
+    },
+    {
+      "name": "quran",
+      "brief": "Get a random quran verse with translation",
+      "example": ",quran"
+    }
+  ],
+  "Servers": [
+    {
+      "name": "levels role",
+      "brief": "add level roles to be awarded",
+      "example": ",levels role 5 level-5"
+    },
+    {
+      "name": "levels channel",
+      "brief": "set a channel for level award messages",
+      "example": ",levels channel #txt"
+    },
+    {
+      "name": "levels disable",
+      "brief": "disable leveling",
+      "example": null
+    },
+    {
+      "name": "levels list",
+      "brief": "show all level rewards",
+      "example": null
+    },
+    {
+      "name": "levels message",
+      "brief": "set a message for leveling up",
+      "example": ",levels message {embed}{description: congrats {user.mention} for hitting level {level}}"
+    },
+    {
+      "name": "levels setup",
+      "brief": "setup leveling",
+      "example": null
+    },
+    {
+      "name": "levels enable",
+      "brief": "enable leveling",
+      "example": null
+    },
+    {
+      "name": "notifications responder",
+      "brief": "set a responder message when an @everyone is sent into a notification channel",
+      "example": ",notifications responder ,dis to disable pings"
+    },
+    {
+      "name": "notifications command",
+      "brief": "enable or disable the ping disable command",
+      "example": ",notifications command true"
+    },
+    {
+      "name": "notifications reset",
+      "brief": "clear your notification channel setup",
+      "example": null
+    },
+    {
+      "name": "notifications setup",
+      "brief": "Create a role to be used to disable @everyone mentions for a channel",
+      "example": null
+    },
+    {
+      "name": "notifications channel",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "paginator clear",
+      "brief": "Remove all existing paginators",
+      "example": ",paginator clear"
+    },
+    {
+      "name": "paginator add",
+      "brief": "make a paginator from a list of embed code objects",
+      "example": ",paginator add hello {embed}$v{description: sup}{embed}$v{description: welcome}"
+    },
+    {
+      "name": "paginator remove",
+      "brief": "delete an existing paginator",
+      "example": ",paginator remove hello"
+    },
+    {
+      "name": "paginator list",
+      "brief": "list all paginators setup",
+      "example": ",paginator list"
+    },
+    {
+      "name": "alias add",
+      "brief": "add an alias for a command",
+      "example": ",alias add ban, byebye"
+    },
+    {
+      "name": "alias remove",
+      "brief": "remove an alias from a command",
+      "example": ",alias remove ban"
+    },
+    {
+      "name": "alias list",
+      "brief": "show all your current command aliases",
+      "example": "alias list"
+    },
+    {
+      "name": "settings description",
+      "brief": "Apply a message as the guild description",
+      "example": ",settings system description this is the best server"
+    },
+    {
+      "name": "settings system",
+      "brief": "Settings for system related commands",
+      "example": ",settings system"
+    },
+    {
+      "name": "settings context",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "settings banner",
+      "brief": "Apply an image as the guild banner",
+      "example": ",settings system banner {image}"
+    },
+    {
+      "name": "settings icon",
+      "brief": "Apply an image as the guild icon",
+      "example": ",settings system icon {image}"
+    },
+    {
+      "name": "settings splash",
+      "brief": "Apply an image as the guild splash",
+      "example": ",settings system splash {image}"
+    },
+    {
+      "name": "settings transcribe",
+      "brief": "enable or disable auto transcribing messages",
+      "example": ",settings transcribe true"
+    },
+    {
+      "name": "sticker clean",
+      "brief": "Remove any vanity links or .gg/ URLs from all sticker names",
+      "example": ",sticker clean"
+    },
+    {
+      "name": "sticker remove",
+      "brief": "Delete a sticker from the server",
+      "example": ",sticker delete dumb_sticker"
+    },
+    {
+      "name": "sticker rename",
+      "brief": "Rename a sticker in the server",
+      "example": ",sticker rename dumb_sticker, new_name,"
+    },
+    {
+      "name": "sticker add",
+      "brief": "Add a sticker recently posted in chat to the server",
+      "example": ",sticker add (reply to sticker)"
+    },
+    {
+      "name": "sticker tag",
+      "brief": "Add your vanity link to every sticker name",
+      "example": ",sticker tag"
+    },
+    {
+      "name": "premiumrole add",
+      "brief": "set a role for all boosters to be given",
+      "example": ",premiumrole add pic"
+    },
+    {
+      "name": "premiumrole remove",
+      "brief": "remove the booster role",
+      "example": ",premiumrole remove pic"
+    },
+    {
+      "name": "premiumrole list",
+      "brief": "Check which role is set as a premium reward role",
+      "example": ",premiumrole list"
+    },
+    {
+      "name": "emoji image",
+      "brief": "Add an emoji to the guild",
+      "example": ",emoji add :sad_bear:"
+    },
+    {
+      "name": "emoji add",
+      "brief": "Add multiple emojis to the server",
+      "example": ",emoji add [emojis]"
+    },
+    {
+      "name": "emoji remove",
+      "brief": "Remove an emoji from the server",
+      "example": ",emoji remove [emoji]"
+    },
+    {
+      "name": "emoji steal",
+      "brief": "steal the most recently used emoji",
+      "example": ",emoji steal"
+    },
+    {
+      "name": "emoji rename",
+      "brief": "Rename an emoji",
+      "example": ",emoji rename :sad: megasad"
+    },
+    {
+      "name": "emoji removeduplicates",
+      "brief": "Remove all emojis that has a duplicate",
+      "example": ",emoji removeduplicates"
+    },
+    {
+      "name": "embed",
+      "brief": "Create an embed using an embed code",
+      "example": ",embed {embed_code}"
+    },
+    {
+      "name": "selfprefix remove",
+      "brief": "Reset the self prefix you have previously set",
+      "example": ",selfprefix remove"
+    },
+    {
+      "name": "prefix remove",
+      "brief": "Remove the custom guild prefix from the bot",
+      "example": ",prefix remove"
+    },
+    {
+      "name": "fakepermissions add",
+      "brief": "Add a fake permission to a role",
+      "example": ",fakepermission add @members, manage guild"
+    },
+    {
+      "name": "fakepermissions list",
+      "brief": "show all fake permission entries",
+      "example": ",fakepermissions list"
+    },
+    {
+      "name": "fakepermissions remove",
+      "brief": "remove fake permissions from a role",
+      "example": ",fakepermission remove @member"
+    },
+    {
+      "name": "fakepermissions clear",
+      "brief": "clear all fake permissions",
+      "example": "fakpermissions clear"
+    },
+    {
+      "name": "welcome reset",
+      "brief": "Clear welcome settings",
+      "example": ",welcome reset"
+    },
+    {
+      "name": "welcome view",
+      "brief": "View your current welcome embed code",
+      "example": ",welcome view"
+    },
+    {
+      "name": "welcome setup",
+      "brief": "setup welcome settings",
+      "example": ",welcome setup"
+    },
+    {
+      "name": "welcome channel",
+      "brief": "Set the welcome channel",
+      "example": ",welcome channel #welcomechannel"
+    },
+    {
+      "name": "welcome message",
+      "brief": "Set the welcome message",
+      "example": ",welcome message wsp {user}"
+    },
+    {
+      "name": "welcome test",
+      "brief": "Test the welcome message",
+      "example": ",welcome test"
+    },
+    {
+      "name": "leave reset",
+      "brief": "Clear leave settings",
+      "example": ",leave reset"
+    },
+    {
+      "name": "leave setup",
+      "brief": "Configure leave settings",
+      "example": ",leave setup"
+    },
+    {
+      "name": "leave test",
+      "brief": "Test the leave message",
+      "example": ",leave test"
+    },
+    {
+      "name": "leave channel",
+      "brief": "Set the leave channel",
+      "example": ",leave channel #goodbye"
+    },
+    {
+      "name": "leave message",
+      "brief": "Set the leave message",
+      "example": ",leave message {embed_code}"
+    },
+    {
+      "name": "leave view",
+      "brief": "view your current leave embed code",
+      "example": null
+    },
+    {
+      "name": "boosterroles delete",
+      "brief": "Remove your custom booster role from the guild",
+      "example": ",boosterroles remove"
+    },
+    {
+      "name": "boosterroles disable",
+      "brief": "Disable booster roles in the guild",
+      "example": ",boosterroles disable"
+    },
+    {
+      "name": "boosterroles share",
+      "brief": "Share your booster role with another user or remove it if they already have it",
+      "example": ",boosterroles share @sudosql"
+    },
+    {
+      "name": "boosterroles color",
+      "brief": "Change the color or recolor your custom booster role in this guild",
+      "example": ",boosterroles color #2b2d31"
+    },
+    {
+      "name": "boosterroles setup",
+      "brief": "Allow users to create their own role after boosting the guild",
+      "example": ",boosterroles enable"
+    },
+    {
+      "name": "boosterroles create",
+      "brief": "Create a custom booster role for boosting the guild",
+      "example": ",boosterroles create topG"
+    },
+    {
+      "name": "boosterroles icon",
+      "brief": "Set or Change the current icon you have set for your custom booster role in this guild",
+      "example": ",boosterroles icon :blunt:"
+    },
+    {
+      "name": "boosterroles base",
+      "brief": "Set a base role for booster roles to be created under",
+      "example": ",boosterroles base @members"
+    },
+    {
+      "name": "boosterroles rename",
+      "brief": "Rename your custom booster role in this guild",
+      "example": ",boosterroles rename littleG"
+    },
+    {
+      "name": "autorole remove",
+      "brief": "Remove an autorole or autoroles",
+      "example": ",autorole remove member"
+    },
+    {
+      "name": "autorole list",
+      "brief": "list all autoroles",
+      "example": ",autorole list"
+    },
+    {
+      "name": "autorole add",
+      "brief": "Add an autorole or autoroles",
+      "example": ",autorole add @member"
+    },
+    {
+      "name": "autoreact add",
+      "brief": "Automatically react to phrases said",
+      "example": ",autoreact add com :skull:"
+    },
+    {
+      "name": "autoreact clear",
+      "brief": "remove all autoreactions from the guild",
+      "example": "autoreaction clear"
+    },
+    {
+      "name": "autoreact removeall",
+      "brief": "Remove and reset every auto reaction trigger",
+      "example": ",autoreact removeall"
+    },
+    {
+      "name": "autoreact remove",
+      "brief": "Remove the autoreaction for phrases said",
+      "example": ",reaction remove com"
+    },
+    {
+      "name": "autoreact list",
+      "brief": "View all autoreactions currenctly set for phrases",
+      "example": ",autoreaction list"
+    },
+    {
+      "name": "reskin avatar",
+      "brief": "image",
+      "example": null
+    },
+    {
+      "name": "reskin setup",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "reskin delete",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "reskin disable",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "reskin name",
+      "brief": "name",
+      "example": null
+    },
+    {
+      "name": "reactionrole add",
+      "brief": "Add a reaction role to a message",
+      "example": ",autoreaction add [message] [emoji] [roles]"
+    },
+    {
+      "name": "reactionrole remove",
+      "brief": "Remove a reaction role from a message",
+      "example": ",reactionrole remove [message_id] [emoji]"
+    },
+    {
+      "name": "reactionrole clear",
+      "brief": "Clear all reaction roles from a message",
+      "example": ",reactionrole clear"
+    },
+    {
+      "name": "reactionrole list",
+      "brief": "View a list of all reaction roles set to messages",
+      "example": ",reactionrole list"
+    },
+    {
+      "name": "autoresponder list",
+      "brief": "Show a list of all current auto responses",
+      "example": ",autoresponder list"
+    },
+    {
+      "name": "autoresponder remove",
+      "brief": "Remove an automatic response from a given phrase",
+      "example": ",autoresponder remove hi"
+    },
+    {
+      "name": "autoresponder clear",
+      "brief": "Clear all the current auto responders",
+      "example": ",autoresponder clear"
+    },
+    {
+      "name": "autoresponder add",
+      "brief": "Add an automatic response to given phrase",
+      "example": ",autoresponder add com, you're a troll"
+    },
+    {
+      "name": "boost message",
+      "brief": "Set the message to be sent when someone boosts the guild",
+      "example": ",boost message [code]"
+    },
+    {
+      "name": "boost reset",
+      "brief": "Disable boost messages for the guild",
+      "example": ",boost reset"
+    },
+    {
+      "name": "boost view",
+      "brief": "View the current boost message embed code",
+      "example": ",boost view"
+    },
+    {
+      "name": "boost channel",
+      "brief": "Assign a channel for boost messages to be sent",
+      "example": ",boost channel #boostchannel"
+    },
+    {
+      "name": "boost setup",
+      "brief": "Enable boost messages for the guild",
+      "example": ",boost setup"
+    },
+    {
+      "name": "boost test",
+      "brief": "Test the set boost message",
+      "example": ",boost test"
+    },
+    {
+      "name": "thread add",
+      "brief": "Add a member to the thread",
+      "example": ",thread add #thread @member"
+    },
+    {
+      "name": "thread unlock",
+      "brief": "Unlocks a thread",
+      "example": ",thread unlock #channel"
+    },
+    {
+      "name": "thread remove",
+      "brief": "Remove a member from the thread",
+      "example": ",thread remove #thread @member"
+    },
+    {
+      "name": "thread lock",
+      "brief": "Locks a thread",
+      "example": ",thread lock #channel"
+    },
+    {
+      "name": "counter enable",
+      "brief": "Enable the counter in a specific channel.",
+      "example": null
+    },
+    {
+      "name": "counter disable",
+      "brief": "Disabel the counter in a specific channel.",
+      "example": null
+    },
+    {
+      "name": "pingonjoin disable",
+      "brief": "Resets ping on join module",
+      "example": null
+    },
+    {
+      "name": "pingonjoin message",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "pingonjoin enable",
+      "brief": "Enable ping on join",
+      "example": null
+    },
+    {
+      "name": "buttonrole removeall",
+      "brief": "Removes all button roles from a message",
+      "example": ",buttonrole removeall discord.com/channels/..."
+    },
+    {
+      "name": "buttonrole reset",
+      "brief": "Clears every button role from guild",
+      "example": null
+    },
+    {
+      "name": "buttonrole list",
+      "brief": "View a list of every button role",
+      "example": null
+    },
+    {
+      "name": "buttonrole add",
+      "brief": "add a button role",
+      "example": ""
+    },
+    {
+      "name": "buttonrole remove",
+      "brief": "Remove a button role from a message",
+      "example": ",buttonrole remove discord.channels/... 3"
+    },
+    {
+      "name": "rolelock add",
+      "brief": "Add role locks for locker roles.",
+      "example": null
+    },
+    {
+      "name": "rolelock remove",
+      "brief": "Remove a role lock.",
+      "example": null
+    },
+    {
+      "name": "rolelock list",
+      "brief": "List all role locks.",
+      "example": null
+    },
+    {
+      "name": "drag",
+      "brief": "Drag a member to your voicechannel",
+      "example": ",drag @shittour"
+    },
+    {
+      "name": "clearinvites",
+      "brief": "Clear all server invites",
+      "example": ",clearinvites"
+    },
+    {
+      "name": "unbanall",
+      "brief": "Unbans every member in the guild",
+      "example": ",unbanall"
+    },
+    {
+      "name": "antiselfreact add",
+      "brief": "Add a user to the Anti-Self-React list",
+      "example": null
+    },
+    {
+      "name": "antiselfreact enable",
+      "brief": "Enable Anti-Self-React in the guild",
+      "example": null
+    },
+    {
+      "name": "antiselfreact ignore",
+      "brief": "Ignore a user or role",
+      "example": null
+    },
+    {
+      "name": "antiselfreact remove",
+      "brief": "Remove a user from the Anti-Self-React list",
+      "example": null
+    },
+    {
+      "name": "antiselfreact unignore",
+      "brief": "Unignore a user or role",
+      "example": null
+    },
+    {
+      "name": "antiselfreact disable",
+      "brief": "Disable Anti-Self-React in the guild",
+      "example": null
+    }
+  ],
+  "Moderation": [
+    {
+      "name": "pin",
+      "brief": "manage messages",
+      "example": null
+    },
+    {
+      "name": "unpin",
+      "brief": "manage messages",
+      "example": null
+    },
+    {
+      "name": "naughty",
+      "brief": "Manage channels",
+      "example": null
+    },
+    {
+      "name": "slowmode reset",
+      "brief": "reset the slowmode on the channel",
+      "example": ",slowmode reset"
+    },
+    {
+      "name": "invoke",
+      "brief": "set or clear an invoke message for a command",
+      "example": ",invoke ban {embed}{description: bye {user.mention}}\n,invoke ban clear"
+    },
+    {
+      "name": "banned",
+      "brief": "view the reason a user is banned",
+      "example": ",banned sudosql"
+    },
+    {
+      "name": "nuke",
+      "brief": "delete and recreate the same channel with the same permissions",
+      "example": ",nuke #>.<"
+    },
+    {
+      "name": "reactionmute",
+      "brief": "mute a member from reacting to messages",
+      "example": ",rmute @sudosql toxic"
+    },
+    {
+      "name": "imagemute",
+      "brief": "mute a member from sending images",
+      "example": "imute @sudosql nsfw"
+    },
+    {
+      "name": "restrict add",
+      "brief": "add a command restriction",
+      "example": null
+    },
+    {
+      "name": "restrict list",
+      "brief": "show command restrictions",
+      "example": ",restrict list"
+    },
+    {
+      "name": "restrict remove",
+      "brief": "Delete a command restriction",
+      "example": ",restrict remove ban, @role"
+    },
+    {
+      "name": "restrict reset",
+      "brief": "reset all comfmand restrictions",
+      "example": ",restrict reset"
+    },
+    {
+      "name": "topic",
+      "brief": "change the channel topic",
+      "example": ",topic general sudosql is the best"
+    },
+    {
+      "name": "permissions",
+      "brief": "show a member or role's permissions",
+      "example": null
+    },
+    {
+      "name": "newusers",
+      "brief": "show new users that joined the guild",
+      "example": ",newusers"
+    },
+    {
+      "name": "role duplicate",
+      "brief": "Duplicate an existing role",
+      "example": ",role duplicate com"
+    },
+    {
+      "name": "role icon",
+      "brief": "Change the icon of a role.",
+      "example": ",role icon <role> <emoji|URL|attachment>"
+    },
+    {
+      "name": "role rename",
+      "brief": "Rename a created role",
+      "example": ",role rename @members, com"
+    },
+    {
+      "name": "role create",
+      "brief": "Create a new role for the guild",
+      "example": ",role create com"
+    },
+    {
+      "name": "role hoist",
+      "brief": "Display the role seperately from other roles",
+      "example": ",role hoist @com"
+    },
+    {
+      "name": "role mentionable",
+      "brief": "make a role mentionable lol",
+      "example": ",role mentionable @owner"
+    },
+    {
+      "name": "role delete",
+      "brief": "Delete an existing role in the guild",
+      "example": ",role delete com"
+    },
+    {
+      "name": "role color",
+      "brief": "Create a color for a role",
+      "example": ",role color 010101, @com"
+    },
+    {
+      "name": "role all",
+      "brief": "give a role to all members or bots",
+      "example": ",role all @members"
+    },
+    {
+      "name": "modstats",
+      "brief": "see statistics of a moderator",
+      "example": null
+    },
+    {
+      "name": "channel duplicate",
+      "brief": "Duplicate an existing channel in the current guild",
+      "example": null
+    },
+    {
+      "name": "channel rename",
+      "brief": "Rename an existing channel in the current guild",
+      "example": null
+    },
+    {
+      "name": "channel create",
+      "brief": "Create a new channel in a guild",
+      "example": null
+    },
+    {
+      "name": "channel delete",
+      "brief": "Delete a channel in the current guild",
+      "example": null
+    },
+    {
+      "name": "category create",
+      "brief": "Create a category for a guild",
+      "example": null
+    },
+    {
+      "name": "category rename",
+      "brief": "Rename an existing category's name",
+      "example": null
+    },
+    {
+      "name": "category delete",
+      "brief": "Delete an existing category from the guild",
+      "example": null
+    },
+    {
+      "name": "category duplicate",
+      "brief": "Duplicate an existing category in the guild",
+      "example": null
+    },
+    {
+      "name": "ban",
+      "brief": "Ban a user from the guild",
+      "example": null
+    },
+    {
+      "name": "unban",
+      "brief": "Unban a banned user from the guild",
+      "example": null
+    },
+    {
+      "name": "kick",
+      "brief": "Kick a user from the guild",
+      "example": null
+    },
+    {
+      "name": "muted",
+      "brief": "show muted members and the duration left for their mute",
+      "example": ",muted"
+    },
+    {
+      "name": "mute list",
+      "brief": "View list of timed out members",
+      "example": ",timeout list"
+    },
+    {
+      "name": "jail channel",
+      "brief": "Set the jail channel",
+      "example": ",jail channel #jail"
+    },
+    {
+      "name": "jail role",
+      "brief": "Set the jail role",
+      "example": ",jail role @jailed"
+    },
+    {
+      "name": "setup reset",
+      "brief": "Reset the jail setup",
+      "example": ",setup reset"
+    },
+    {
+      "name": "protect list",
+      "brief": "view the protected users",
+      "example": null
+    },
+    {
+      "name": "jailed",
+      "brief": "show jailed members",
+      "example": ",jailed"
+    },
+    {
+      "name": "unjail all",
+      "brief": "unjail all jailed members",
+      "example": ",unjail all"
+    },
+    {
+      "name": "unmute",
+      "brief": "Unmute a user in the guild",
+      "example": ",unmute @sudosql"
+    },
+    {
+      "name": "nickname",
+      "brief": "Change a users nickname in the guild",
+      "example": null
+    },
+    {
+      "name": "forcenick",
+      "brief": "Force/Remove the force of a users nickname in a guild",
+      "example": "forcenick @sudosql catboy"
+    },
+    {
+      "name": "lock reset",
+      "brief": "Reset the lock role",
+      "example": null
+    },
+    {
+      "name": "lock permit",
+      "brief": "Permit a user to speak in a locked channel",
+      "example": null
+    },
+    {
+      "name": "lock unpermit",
+      "brief": "Remove a users permissions from speaking in locked channels",
+      "example": null
+    },
+    {
+      "name": "lock role",
+      "brief": "set the role to be allowed / disallowed to speak",
+      "example": null
+    },
+    {
+      "name": "unlock",
+      "brief": "Unlock a locked channel in a guild",
+      "example": null
+    },
+    {
+      "name": "restore",
+      "brief": "Restore all roles to a user who recently lost roles in a guild",
+      "example": null
+    },
+    {
+      "name": "strip",
+      "brief": "Remove moderation roles from a user in a guild",
+      "example": null
+    },
+    {
+      "name": "command enable",
+      "brief": "Enable a command for a guild",
+      "example": ",command enable ban"
+    },
+    {
+      "name": "command disable",
+      "brief": "Disable a command for the guild",
+      "example": ",command disable ban"
+    },
+    {
+      "name": "command list",
+      "brief": "List all disabled commands in a guild",
+      "example": ",command list"
+    },
+    {
+      "name": "botclear",
+      "brief": "clean messages from bots",
+      "example": ",botclear 100"
+    },
+    {
+      "name": "purge emojis",
+      "brief": "Mass delete Emojis sent in a guild",
+      "example": ",purge emojis 100"
+    },
+    {
+      "name": "purge bots",
+      "brief": "Mass delete messages sent by bots",
+      "example": ",purge bots 100"
+    },
+    {
+      "name": "purge images",
+      "brief": "Mass delete Images sent in a channel",
+      "example": ",purge images 100"
+    },
+    {
+      "name": "purge webhooks",
+      "brief": "Mass delete webhook messages in a guild",
+      "example": ",purge webhooks 10"
+    },
+    {
+      "name": "purge reactions",
+      "brief": "Mass delete reactions in a guild",
+      "example": ",purge reactions 20"
+    },
+    {
+      "name": "cleanup",
+      "brief": "Cleans up all bot messages from the channel",
+      "example": ",cleanup"
+    },
+    {
+      "name": "warn punishment",
+      "brief": "Manage warning punishments",
+      "example": null
+    },
+    {
+      "name": "warn remove",
+      "brief": "Remove a warning from a member",
+      "example": ",warn remove @sudosql 1"
+    },
+    {
+      "name": "warn clear",
+      "brief": "Clear all warnings for a member",
+      "example": ",warn clear @sudosql"
+    },
+    {
+      "name": "warn list",
+      "brief": "List all warnings for a member",
+      "example": ",warn list @sudosql"
+    },
+    {
+      "name": "warnings",
+      "brief": "List all warnings for a member",
+      "example": ",warnings @sudosql"
+    },
+    {
+      "name": "picperms",
+      "brief": "manage messages",
+      "example": null
+    },
+    {
+      "name": "report add",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "report remove",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "report send",
+      "brief": null,
+      "example": null
+    }
+  ],
+  "Roleplay": [
+    {
+      "name": "propose",
+      "brief": "propose to another user.",
+      "example": ",propose @wurri"
+    },
+    {
+      "name": "spouse",
+      "brief": "check who your spouse is.",
+      "example": null
+    },
+    {
+      "name": "divorce",
+      "brief": "divorce your spouse.",
+      "example": null
+    },
+    {
+      "name": "kiss",
+      "brief": "kiss another user.",
+      "example": ",kiss @wurri"
+    },
+    {
+      "name": "hug",
+      "brief": "hug another user.",
+      "example": ",hug @wurri"
+    },
+    {
+      "name": "smile",
+      "brief": "smile at another user.",
+      "example": ",smile @wurri"
+    },
+    {
+      "name": "pat",
+      "brief": "pat another user.",
+      "example": ",pat @wurri"
+    },
+    {
+      "name": "pout",
+      "brief": "pout at another user.",
+      "example": ",pout @wurri"
+    },
+    {
+      "name": "nod",
+      "brief": "nod at another user.",
+      "example": ",nod @wurri"
+    },
+    {
+      "name": "punch",
+      "brief": "punch another user.",
+      "example": ",punch @wurri"
+    },
+    {
+      "name": "laugh",
+      "brief": "laugh at another user.",
+      "example": ",laugh @wurri"
+    },
+    {
+      "name": "wink",
+      "brief": "wink at another user.",
+      "example": ",wink @wurri"
+    },
+    {
+      "name": "blush",
+      "brief": "blush at another user.",
+      "example": ",blush @wurri"
+    },
+    {
+      "name": "cuddle",
+      "brief": "cuddle with another user.",
+      "example": ",cuddle @wurri"
+    },
+    {
+      "name": "slap",
+      "brief": "slap another user.",
+      "example": ",slap @wurri"
+    },
+    {
+      "name": "kill",
+      "brief": "kill another user.",
+      "example": ",kill @tourxp"
+    },
+    {
+      "name": "fuck",
+      "brief": "fuck another user (nsfw)",
+      "example": null
+    },
+    {
+      "name": "random femdom",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random hentai",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random masturbation",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random pussy",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random ass",
+      "brief": "Get a random 'ass' image.",
+      "example": null
+    },
+    {
+      "name": "random blowjob",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random anal",
+      "brief": "Get a random 'anal' image.",
+      "example": null
+    },
+    {
+      "name": "random boobjob",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random bdsm",
+      "brief": "Get a random 'bdsm' image.",
+      "example": null
+    },
+    {
+      "name": "random boobs",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random classic",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random thighs",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random cum",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random ahegao",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random creampie",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random tentacles",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random manga",
+      "brief": "Get a random 'nsfw' image.",
+      "example": null
+    },
+    {
+      "name": "random gif",
+      "brief": "Get a random 'gif' image.",
+      "example": null
+    }
+  ],
+  "LastFM": [
+    {
+      "name": "lastfm whoknows",
+      "brief": "Shows what other users listen to the current track in your server",
+      "example": ",lastfm whoknows Juice Wrld"
+    },
+    {
+      "name": "lastfm reaction",
+      "brief": "Set a Custom reaction like and dislike for your LastFM embed",
+      "example": ",lastfm reaction :thumbsup::skin-tone-2: :thumbsdown::skin-tone-2: "
+    },
+    {
+      "name": "lastfm variables",
+      "brief": "View all of the LastFM custom embed variables",
+      "example": ",lastfm variables"
+    },
+    {
+      "name": "lastfm topalbums",
+      "brief": "View the top albums of a user",
+      "example": ",lastfm topalbums"
+    },
+    {
+      "name": "lastfm embed",
+      "brief": "Create a custom embed for your lastfm now playing command",
+      "example": ",lastfm embed {embed code}"
+    },
+    {
+      "name": "lastfm toptracks",
+      "brief": "View the top tracks of a user",
+      "example": ",lastfm toptracks"
+    },
+    {
+      "name": "lastfm topartists",
+      "brief": "View the top artists of a user",
+      "example": ",lastfm topartists"
+    },
+    {
+      "name": "lastfm collage",
+      "brief": "Generate a Last.FM collage",
+      "example": ",lastfm collage [timespan]"
+    },
+    {
+      "name": "lastfm artist",
+      "brief": "View information on a music artist through lastfm",
+      "example": ",lastfm artist Juice Wrld"
+    },
+    {
+      "name": "lastfm customcommand",
+      "brief": "Set a custom command for your lastfm command",
+      "example": ",lastfm customcommand sudosql"
+    },
+    {
+      "name": "lastfm login",
+      "brief": "Login to LastFM using OAuth",
+      "example": ",lastfm login"
+    },
+    {
+      "name": "lastfm set",
+      "brief": "Link a LastFM account to your user",
+      "example": ",lastfm set yurrion"
+    },
+    {
+      "name": "lastfm nowplaying",
+      "brief": "Show what song is currently playing through your linked LastFM account",
+      "example": ",lastfm nowplaying"
+    },
+    {
+      "name": "lastfm recents",
+      "brief": "View what songs were recently listened to in the server",
+      "example": ",lastfm recents"
+    },
+    {
+      "name": "lastfm steal",
+      "brief": "steal someone elses custom embed code",
+      "example": ",lastfm steal @sudosql"
+    },
+    {
+      "name": "lastfm milestone",
+      "brief": "See what track your given number scrobble was",
+      "example": ",lastfm milestone 1000"
+    },
+    {
+      "name": "lastfm refresh",
+      "brief": "Refresh your lastFM data",
+      "example": ",lastfm refresh"
+    },
+    {
+      "name": "lastfm taste",
+      "brief": "Compare your music taste with another user",
+      "example": ",lastfm taste @user [period]"
+    },
+    {
+      "name": "lastfm mostcrowns",
+      "brief": "View users with the most crowns",
+      "example": ",lastfm mostcrowns"
+    },
+    {
+      "name": "fm",
+      "brief": "View the last song you listened to on LastFM",
+      "example": ",fm"
+    },
+    {
+      "name": "whoknows",
+      "brief": "Shows what other users listen to the current track in your server",
+      "example": ",wk Juice Wrld"
+    },
+    {
+      "name": "globalwhoknows",
+      "brief": "Shows what other users listen to the current track globally",
+      "example": ",globalwhoknows Juice Wrld"
+    },
+    {
+      "name": "taste",
+      "brief": "Compare your music taste with another user",
+      "example": ",taste @user [period]"
+    },
+    {
+      "name": "milestone",
+      "brief": "See what track your given number scrobble was",
+      "example": ",milestone 1000"
+    }
+  ],
+  "Antiraid": [
+    {
+      "name": "antiraid status",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "antiraid defaultpfp",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "antiraid setminage",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "antiraid punishment",
+      "brief": "Set the punishment for raid attempts",
+      "example": null
+    },
+    {
+      "name": "antiraid toggle",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "antiraid setlogchannel",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "lockdown",
+      "brief": null,
+      "example": null
+    }
+  ],
+  "Voicemaster": [
+    {
+      "name": "voicemaster drag",
+      "brief": "drag a user from a voice channel",
+      "example": null
+    },
+    {
+      "name": "voicemaster claim",
+      "brief": "claim an unclaimed voice channel",
+      "example": null
+    },
+    {
+      "name": "voicemaster reveal",
+      "brief": "reveal your hidden voice channel",
+      "example": null
+    },
+    {
+      "name": "voicemaster reset",
+      "brief": "reset the voicemaster configuration",
+      "example": null
+    },
+    {
+      "name": "voicemaster delete",
+      "brief": "delete your voice channel",
+      "example": null
+    },
+    {
+      "name": "voicemaster reject",
+      "brief": "reject and kick a user out of your voice channel",
+      "example": null
+    },
+    {
+      "name": "voicemaster rename",
+      "brief": "rename your voice channel",
+      "example": null
+    },
+    {
+      "name": "voicemaster lock",
+      "brief": "lock your voice channel",
+      "example": null
+    },
+    {
+      "name": "voicemaster hide",
+      "brief": "hide your voice channel",
+      "example": null
+    },
+    {
+      "name": "voicemaster unlock",
+      "brief": "unlock your voice channel",
+      "example": null
+    },
+    {
+      "name": "voicemaster information",
+      "brief": "view information on the current voice channel",
+      "example": null
+    },
+    {
+      "name": "voicemaster setup",
+      "brief": "setup a voicemaster configuration",
+      "example": null
+    },
+    {
+      "name": "voicemaster limit",
+      "brief": "limit the amount of users that can join your voice channel",
+      "example": null
+    },
+    {
+      "name": "voicemaster permit",
+      "brief": "permit a user to join your voice channel",
+      "example": null
+    },
+    {
+      "name": "voicemaster status",
+      "brief": "set the status of all of your voice master channels",
+      "example": null
+    }
+  ],
+  "Economy": [
+    {
+      "name": "blackjack",
+      "brief": "play blackjack against the house to gamble bucks",
+      "example": ",blackjack 100"
+    },
+    {
+      "name": "balance",
+      "brief": "Show your wallet, bank, lab earnings, and rank on the leaderboard",
+      "example": ",balance"
+    },
+    {
+      "name": "open",
+      "brief": "Open an account to start gambling",
+      "example": ",open"
+    },
+    {
+      "name": "deposit",
+      "brief": "Deposit bucks from your wallet to your bank",
+      "example": ",deposit 200"
+    },
+    {
+      "name": "withdraw",
+      "brief": "Withdraw bucks from your bank to your wallet",
+      "example": ",withdraw 200"
+    },
+    {
+      "name": "daily",
+      "brief": "Collect your daily bucks",
+      "example": ",daily"
+    },
+    {
+      "name": "coinflip",
+      "brief": "Flip a coin to earn bucks",
+      "example": ",coinflip 100 heads"
+    },
+    {
+      "name": "transfer",
+      "brief": "Give another user some of your bucks",
+      "example": ",transfer @sudosql 100000"
+    },
+    {
+      "name": "gamble",
+      "brief": "Roll against the bot. If you roll higher, you win!",
+      "example": ",gamble 500"
+    },
+    {
+      "name": "crash",
+      "brief": "Play the crash game! Bet on how high the rocket can go before it crashes.",
+      "example": null
+    },
+    {
+      "name": "ladder",
+      "brief": "Play the ladder game and climb multipliers!",
+      "example": ",ladder 1000"
+    },
+    {
+      "name": "wealthy",
+      "brief": "Show top users for either earnings or balance",
+      "example": ",leaderboard"
+    },
+    {
+      "name": "rob",
+      "brief": "Rob another user and take 10% of their balance.",
+      "example": ",rob @user"
+    },
+    {
+      "name": "work",
+      "brief": "Earn some money by working random jobs.",
+      "example": ",work"
+    },
+    {
+      "name": "beg",
+      "brief": "Earn some money by working the streets.",
+      "example": ",beg"
+    },
+    {
+      "name": "crime",
+      "brief": "Attempt a crime for a chance to earn money or get caught!",
+      "example": ",crime"
+    },
+    {
+      "name": "dance",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "bombs",
+      "brief": "Play the bombs game - avoid bombs to multiply your bet!",
+      "example": ",bombs 1000 2"
+    },
+    {
+      "name": "crack",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "fish",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "myfish",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "lab upgrade",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "lab collect",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "lab buy",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "lab status",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "lab ampoules",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "scratch",
+      "brief": "Buy a scratch card and test your luck",
+      "example": ",scratch 1000"
+    }
+  ],
+  "MusicCommands": [
+    {
+      "name": "play",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "disconnect",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "skip",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "volume",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "pause",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "resume",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "shuffle",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "repeat",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "current",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "queue remove",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "queue move",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "queue nowplaying",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "queue view",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "queue clear",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "preset boost",
+      "brief": null,
+      "example": ",preset boost"
+    },
+    {
+      "name": "preset karaoke",
+      "brief": null,
+      "example": ",preset karaoke"
+    },
+    {
+      "name": "preset vaporwave",
+      "brief": null,
+      "example": ",preset vaporwave"
+    },
+    {
+      "name": "preset 8d",
+      "brief": null,
+      "example": ",preset 8d"
+    },
+    {
+      "name": "preset vibrato",
+      "brief": null,
+      "example": ",preset vibrato"
+    },
+    {
+      "name": "preset active",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "preset nightcore",
+      "brief": null,
+      "example": ",preset nightcore"
+    },
+    {
+      "name": "preset chipmunk",
+      "brief": null,
+      "example": ",preset chipmunk"
+    },
+    {
+      "name": "preset metal",
+      "brief": null,
+      "example": ",preset metal"
+    },
+    {
+      "name": "preset clear",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "preset soft",
+      "brief": null,
+      "example": ",preset soft"
+    },
+    {
+      "name": "preset piano",
+      "brief": null,
+      "example": ",preset piano"
+    },
+    {
+      "name": "preset flat",
+      "brief": null,
+      "example": ",preset flat"
+    }
+  ],
+  "MusicEvents": [],
+  "Miscellaneous": [
+    {
+      "name": "variables",
+      "brief": "show all embed variables used for the bots embed creator",
+      "example": ",variables"
+    },
+    {
+      "name": "afk",
+      "brief": "Set an afk message before going offline",
+      "example": ",afk going to that little girls house"
+    },
+    {
+      "name": "randomuser",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "snipe",
+      "brief": null,
+      "example": ",snipe 4"
+    },
+    {
+      "name": "editsnipe",
+      "brief": "Retrieve a messages original text before edited",
+      "example": ",editsnipe 2"
+    },
+    {
+      "name": "reactionsnipe",
+      "brief": "Retrieve a deleted reaction from a message",
+      "example": ",reactionsipe 2"
+    },
+    {
+      "name": "clearsnipe",
+      "brief": "Clear all deleted messages from greed",
+      "example": ",clearsnipe"
+    },
+    {
+      "name": "birthday set",
+      "brief": "set your birthday",
+      "example": ",birthday set August 10"
+    },
+    {
+      "name": "birthday reset",
+      "brief": "Clear your set birthday",
+      "example": "birthday reset"
+    },
+    {
+      "name": "selfpurge",
+      "brief": "Clear your messages from a chat",
+      "example": ",selfpurge 100"
+    },
+    {
+      "name": "imageonly",
+      "brief": "Toggle image only mode in a channel",
+      "example": null
+    },
+    {
+      "name": "enlarge",
+      "brief": null,
+      "example": null
+    },
+    {
+      "name": "reminder add",
+      "brief": "Add a reminder",
+      "example": ",reminder add 5m take out the trash"
+    },
+    {
+      "name": "reminder list",
+      "brief": "List all your reminders",
+      "example": ",reminder list"
+    },
+    {
+      "name": "reminder remove",
+      "brief": "Remove a reminder",
+      "example": ",reminder remove 1"
+    },
+    {
+      "name": "revive view",
+      "brief": "View revive message settings.",
+      "example": ",revive view"
+    },
+    {
+      "name": "revive channel",
+      "brief": "Set the revive message channel.",
+      "example": ",revive channel #general"
+    },
+    {
+      "name": "revive send",
+      "brief": "Send the revive message now.",
+      "example": ",revive send"
+    },
+    {
+      "name": "revive enable",
+      "brief": "Enable revive for the server.",
+      "example": ",revive enable"
+    },
+    {
+      "name": "revive message",
+      "brief": "Set the revive message content.",
+      "example": ",revive message Hello, revive!"
+    },
+    {
+      "name": "revive disable",
+      "brief": "Disable revive for the server.",
+      "example": ",revive disable"
+    },
+    {
+      "name": "delete_roles",
+      "brief": "Delete all roles in the server.",
+      "example": null
+    },
+    {
+      "name": "delete_channels",
+      "brief": "Delete all channels in the server.",
+      "example": null
+    },
+    {
+      "name": "copyembed",
+      "brief": "Convert an embed to parser format",
+      "example": ",copyembed https://discord.com/channels/..."
+    }
+  ],
+  "Usernames": [
+    {
+      "name": "username channel",
+      "brief": "Set the channel where username changes will be sent.",
+      "example": ",channel #username-changes"
+    },
+    {
+      "name": "username unset",
+      "brief": "Remove the channel where username changes are sent.",
+      "example": ",unset"
+    }
+  ],
+  "Antinuke": [
+    {
+      "name": "antinuke enable",
+      "brief": "Enable all antinuke settings with a default threshold of 0",
+      "example": ",antinuke enable"
+    },
+    {
+      "name": "antinuke settings",
+      "brief": "List your antinuke settings along with their thresholds",
+      "example": ",antinuke settings"
+    },
+    {
+      "name": "antinuke whitelist",
+      "brief": "Whitelist or unwhitelist a user from being punished by antinuke",
+      "example": ",antinuke whitelist @sudosql"
+    },
+    {
+      "name": "antinuke channel",
+      "brief": "toggle the anti channel update of antinuke",
+      "example": ",antinuke channel true"
+    },
+    {
+      "name": "antinuke ban",
+      "brief": "toggle the anti ban of antinuke",
+      "example": ",antinuke ban true"
+    },
+    {
+      "name": "antinuke threshold",
+      "brief": "Set the threshold until antinuke bans the user",
+      "example": ",antinuke threshold"
+    },
+    {
+      "name": "antinuke webhooks",
+      "brief": "toggle the anti webhooks of antinuke",
+      "example": ",antinuke webhooks true"
+    },
+    {
+      "name": "antinuke modules",
+      "brief": "show antinuke modules",
+      "example": ",antinuke modules"
+    },
+    {
+      "name": "antinuke whitelisted",
+      "brief": "List all users that cannot be effected by antinuke",
+      "example": ",antinuke whitelisted"
+    },
+    {
+      "name": "antinuke disable",
+      "brief": "Disable all antinuke settings",
+      "example": ",antinuke disable"
+    },
+    {
+      "name": "antinuke prune",
+      "brief": "toggle the anti member_prune of antinuke",
+      "example": ",antinuke member_prune true"
+    },
+    {
+      "name": "antinuke guild",
+      "brief": "toggle the anti guild_update of antinuke",
+      "example": ",antinuke guild true"
+    },
+    {
+      "name": "antinuke trust",
+      "brief": "Permit a user to use antinuke commands as an antinuke admin",
+      "example": ",antinuke trust @sudosql"
+    },
+    {
+      "name": "antinuke trusted",
+      "brief": "List all users who are antinuke admins",
+      "example": ",antinuke trusted"
+    },
+    {
+      "name": "antinuke role",
+      "brief": "toggle the anti role update of antinuke",
+      "example": null
+    },
+    {
+      "name": "antinuke botadd",
+      "brief": "Toggle the anti bot add of antinuke",
+      "example": ",antinuke bot_add true"
+    },
+    {
+      "name": "antinuke punishment",
+      "brief": "Set a punishment a user will recieve for breaking an antinuke rule",
+      "example": ",antinuke punishment ban"
+    },
+    {
+      "name": "antinuke kick",
+      "brief": "toggle the anti kick of antinuke",
+      "example": ",antinuke kick true"
+    },
+    {
+      "name": "hardban",
+      "brief": "Hardban a user",
+      "example": ",hardban @wurri"
+    }
+  ],
+  "Tickets": [
+    {
+      "name": "ticket reset",
+      "brief": "Reset the ticket module. Will prevent existing ticket panels from working.",
+      "example": null
+    },
+    {
+      "name": "ticket message",
+      "brief": "Set a message to be sent when a ticket is opened",
+      "example": ",ticket opened {embed_code}"
+    },
+    {
+      "name": "ticket rename",
+      "brief": "Rename a ticket",
+      "example": ",ticket rename name, new-name"
+    },
+    {
+      "name": "ticket settings",
+      "brief": "Check the server's configured ticket settings",
+      "example": null
+    },
+    {
+      "name": "ticket remove",
+      "brief": "Remove a ticket that a user has created",
+      "example": ",ticket remove @sudosql"
+    },
+    {
+      "name": "ticket topics",
+      "brief": "Assign topics to be chosen from before a user creates a ticket",
+      "example": ",ticket topics"
+    },
+    {
+      "name": "ticket support",
+      "brief": "Set a role for users that has that role to answer tickets",
+      "example": ",ticket support @mod"
+    },
+    {
+      "name": "ticket close",
+      "brief": "Check the server's ticket settings",
+      "example": null
+    },
+    {
+      "name": "ticket add",
+      "brief": "Add a user to the ticket",
+      "example": ",ticket add @sudosql"
+    },
+    {
+      "name": "ticket setup",
+      "brief": "Setup the ticket panel to send to a channel",
+      "example": ",ticket setup #tickets"
+    },
+    {
+      "name": "ticket category",
+      "brief": "Set a category where created tickets will be sent to",
+      "example": ",ticket category create-a-ticket"
+    }
+  ]
+}
+
