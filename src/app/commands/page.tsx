@@ -31,13 +31,13 @@ import { AnimatedBackground } from "@/components/animated-background"
 import { CATEGORY_ICON_MAP } from "@/data/categoryIcons"
 
 // Type definitions
-interface Command {
-  name: string
-  description: string
-  usage: string
-  examples: string[]
-  cooldown: string
-}
+// interface Command {
+//  name: string
+//  description: string
+//  usage: string
+//  examples: string[]
+//  cooldown: string
+// }
 
 interface Category {
   id: string
