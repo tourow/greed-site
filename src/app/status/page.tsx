@@ -172,8 +172,8 @@ export default function StatusPage() {
               <Link href="/commands" className="hover:text-white/80 transition-colors">
                 Commands
               </Link>
-              <Link href="/docs" className="hover:text-white/80 transition-colors">
-                Documentation
+              <Link href="/tools/embed" className="hover:text-white/80 transition-colors">
+                Embed Builder
               </Link>
               <Link href="/status" className="text-primary hover:text-white/80 transition-colors">
                 Status

@@ -50,11 +50,11 @@ export default function InvitePage() {
               <Link href="/commands" className="hover:text-white/80 transition-colors">
                 Commands
               </Link>
-              <Link href="/docs" className="hover:text-white/80 transition-colors">
-                Documentation
-              </Link>
               <Link href="/status" className="hover:text-white/80 transition-colors">
                 Status
+              </Link>
+              <Link href="/tools/embed" className="hover:text-white/80 transition-colors">
+                Embed Builder
               </Link>
             </nav>
             <MobileMenu items={navItems} />

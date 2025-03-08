@@ -17,15 +17,18 @@ import {
   Database,
   Bell,
   Lock,
+  Search,
+  X,
 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { PageTransition } from "@/components/page-transition"
 import { CommandCard } from "@/components/command-card"
-import commandsData from "@/data/commands.json"
+import { fetchCommands, CommandsResponse } from "@/lib/api/commands"
 import { RotatingMoonLogo } from "@/components/rotating-moon-logo"
 import { MobileMenu } from "@/components/mobile-menu"
 import { usePathname } from "next/navigation"
 import { AnimatedBackground } from "@/components/animated-background"
+import { CATEGORY_ICON_MAP } from "@/data/categoryIcons"
 
 // Type definitions
 interface Command {
@@ -64,26 +67,6 @@ const ICON_MAP: Record<string, React.ElementType> = {
   Database,
   Bell,
   Lock,
-}
-
-const CATEGORY_ICON_MAP: Record<string, string> = {
-  Moderation: "Shield",
-  Automod: "Shield",
-  Information: "Info",
-  Fun: "Smile",
-  Economy: "Database",
-  Servers: "Settings",
-  MusicCommands: "Music",
-  Roleplay: "Heart",
-  LastFM: "Music",
-  Tickets: "MessageSquare",
-  Antinuke: "Lock",
-  Voicemaster: "MessageSquare",
-  Usernames: "User",
-  Confessions: "MessageSquare",
-  Giveaway: "Gift",
-  Starboard: "Star",
-  Miscellaneous: "Command",
 }
 
 // Custom scrollbar styles
@@ -125,9 +108,12 @@ export default function CommandsPage() {
   const pathname = usePathname()
 
   // Process command data
-  const processCommandData = useCallback(() => {
+  const processCommandData = useCallback(async () => {
     try {
       setIsLoading(true)
+      
+      // Fetch commands from API with caching
+      const commandsData = await fetchCommands();
       
       const categoryArray = Object.entries(commandsData).map(([key, cmds]) => ({
           id: key,
@@ -137,21 +123,27 @@ export default function CommandsPage() {
           commands: cmds.map((cmd: any) => ({
             name: cmd.name,
             description: cmd.brief || "No description available",
-            usage: cmd.name,
+            usage: cmd.usage || cmd.name,
             examples: cmd.example ? [cmd.example] : ["No example available"],
             cooldown: "None",
           })),
       }));
       
       setCategories(categoryArray);
+      
+      // If no category is selected yet, select the first one
+      if (categoryArray.length > 0 && !selectedCategory) {
+        setSelectedCategory(categoryArray[0].id);
+      }
+      
       setError(null);
     } catch (err) {
-      setError('Failed to load commands data');
-      console.error(err);
+      console.error('Error loading commands:', err);
+      setError('Failed to load commands. Using cached data if available.');
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [selectedCategory]);
 
   // Handle window resize for mobile view detection
   const handleResize = useCallback(() => {
@@ -229,7 +221,7 @@ export default function CommandsPage() {
   const navItems = useMemo(() => [
     { href: "/", label: "Home" },
     { href: "/commands", label: "Commands", isActive: true },
-    { href: "/docs", label: "Documentation" },
+    { href: "/tools/embed", label: "Embed Builder" },
     { href: "/status", label: "Status" },
   ], []);
 
@@ -377,6 +369,31 @@ export default function CommandsPage() {
     </div>
   );
 
+  // Update the search input in the header
+  const renderSearchInput = () => (
+    <div className="relative w-full md:w-96 mb-4">
+      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <Search className="h-5 w-5 text-gray-400" />
+      </div>
+      <input
+        type="text"
+        className="bg-black/30 border border-white/10 text-white placeholder-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
+        placeholder="Search commands..."
+        value={searchTerm}
+        onChange={handleSearchChange}
+        aria-label="Search commands"
+      />
+      {searchTerm && (
+        <button
+          onClick={() => setSearchTerm("")}
+          className="absolute inset-y-0 right-0 flex items-center pr-3"
+        >
+          <X className="h-5 w-5 text-gray-400 hover:text-white" />
+        </button>
+      )}
+    </div>
+  );
+
   return (
     <div className="min-h-screen text-white relative overflow-hidden">
       <style jsx global>{SCROLLBAR_STYLES}</style>
@@ -402,8 +419,8 @@ export default function CommandsPage() {
             <Link href="/commands" className="text-blue-400 hover:text-blue-300 transition-colors">
               Commands
             </Link>
-            <Link href="/docs" className="hover:text-white/80 transition-colors">
-              Documentation
+            <Link href="/tools/embed" className="hover:text-white/80 transition-colors">
+              Embed Builder
             </Link>
             <Link href="/status" className="hover:text-white/80 transition-colors">
               Status
@@ -429,27 +446,11 @@ export default function CommandsPage() {
             <span>Commands</span>
           </div>
 
-          {/* Header and search */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-            <div>
-              <h1 className="text-2xl md:text-3xl font-bold">Commands</h1>
-              {!isLoading && (
-                <p className="text-white/60 text-sm md:text-base">
-                  Browse {totalCommands} commands across {categories.length} categories
-                </p>
-              )}
-            </div>
-
-            {/* Search bar */}
-            <div className="w-full md:w-1/3">
-              <input
-                type="text"
-                placeholder="Search commands..."
-                className="w-full p-2 md:p-3 bg-black/50 border border-white/10 rounded-md text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
-                value={searchTerm}
-                onChange={handleSearchChange}
-                aria-label="Search commands"
-              />
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+            <h1 className="text-3xl font-bold mb-4 md:mb-0">Bot Commands</h1>
+            
+            <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+              {renderSearchInput()}
             </div>
           </div>
 

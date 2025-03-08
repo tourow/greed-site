@@ -14,6 +14,9 @@ export default function OutagesAdminPage() {
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isValidatingKey, setIsValidatingKey] = useState(false)
+  const [lastActivity, setLastActivity] = useState<number>(Date.now())
+  const INACTIVITY_TIMEOUT = 30 * 60 * 1000 // 30 minutes
   
   // Form state
   const [title, setTitle] = useState("")
@@ -22,34 +25,132 @@ export default function OutagesAdminPage() {
   const [components, setComponents] = useState("")
   const [editingOutageId, setEditingOutageId] = useState<string | null>(null)
   
+  // Check for inactivity and log out
   useEffect(() => {
-    // Check if user is authenticated
-    const storedApiKey = localStorage.getItem("admin_api_key")
-    if (storedApiKey) {
-      setApiKey(storedApiKey)
-      setIsAuthenticated(true)
-    }
-    
-    // Load outages
-    const loadOutages = async () => {
-      try {
-        const data = await getOutages()
-        setOutages(data)
-      } catch (error) {
-        console.error("Failed to load outages:", error)
-      } finally {
-        setIsLoading(false)
+    const checkActivity = () => {
+      if (isAuthenticated && Date.now() - lastActivity > INACTIVITY_TIMEOUT) {
+        handleLogout()
       }
     }
+
+    const interval = setInterval(checkActivity, 60000) // Check every minute
+    const updateActivity = () => setLastActivity(Date.now())
+
+    // Update last activity on user interactions
+    window.addEventListener('mousemove', updateActivity)
+    window.addEventListener('keydown', updateActivity)
+    window.addEventListener('click', updateActivity)
+
+    return () => {
+      clearInterval(interval)
+      window.removeEventListener('mousemove', updateActivity)
+      window.removeEventListener('keydown', updateActivity)
+      window.removeEventListener('click', updateActivity)
+    }
+  }, [isAuthenticated, lastActivity])
+
+  // Sanitize input
+  const sanitizeInput = (input: string): string => {
+    return input.replace(/<[^>]*>/g, '') // Remove HTML tags
+  }
+  
+  useEffect(() => {
+    const validateAndLoad = async () => {
+      const storedApiKey = localStorage.getItem("admin_api_key")
+      if (storedApiKey) {
+        setApiKey(storedApiKey)
+        try {
+          const response = await fetch("https://api.greed.rocks/validate-key", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ api_key: storedApiKey }),
+          })
+          
+          if (!response.ok) {
+            throw new Error('Network response was not ok')
+          }
+          
+          const data = await response.json()
+          
+          if (data.valid) {
+            setIsAuthenticated(true)
+            try {
+              const outagesData = await getOutages()
+              setOutages(outagesData)
+            } catch (error) {
+              console.error("Failed to load outages:", error)
+              setError("Failed to load outages. Please try again.")
+            }
+          } else {
+            handleLogout()
+          }
+        } catch (error) {
+          console.error("Failed to validate API key:", error)
+          handleLogout()
+        }
+      }
+      setIsLoading(false)
+    }
     
-    loadOutages()
+    validateAndLoad()
   }, [])
   
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogout = () => {
+    localStorage.removeItem("admin_api_key")
+    setApiKey("")
+    setIsAuthenticated(false)
+    setOutages([])
+    router.push("/admin")
+  }
+  
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (apiKey.trim()) {
-      localStorage.setItem("admin_api_key", apiKey)
-      setIsAuthenticated(true)
+    setError(null)
+    setIsValidatingKey(true)
+    
+    const sanitizedApiKey = sanitizeInput(apiKey.trim())
+    if (!sanitizedApiKey) {
+      setError("API key is required")
+      setIsValidatingKey(false)
+      return
+    }
+    
+    try {
+      const response = await fetch("https://api.greed.rocks/validate-key", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ api_key: sanitizedApiKey }),
+      })
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+      
+      const data = await response.json()
+      
+      if (data.valid) {
+        localStorage.setItem("admin_api_key", sanitizedApiKey)
+        setIsAuthenticated(true)
+        try {
+          const outagesData = await getOutages()
+          setOutages(outagesData)
+        } catch (error) {
+          console.error("Failed to load outages:", error)
+          setError("Failed to load outages. Please try again.")
+        }
+      } else {
+        setError("Invalid API key")
+        setApiKey("")
+      }
+    } catch (error) {
+      setError("Failed to validate API key. Please try again.")
+      console.error("Failed to validate API key:", error)
+    } finally {
+      setIsValidatingKey(false)
     }
   }
   
@@ -60,31 +161,46 @@ export default function OutagesAdminPage() {
     setIsSubmitting(true)
     
     try {
-      if (!title || !description) {
+      const sanitizedTitle = sanitizeInput(title.trim())
+      const sanitizedDescription = sanitizeInput(description.trim())
+      const sanitizedComponents = components
+        .split(",")
+        .map(c => sanitizeInput(c.trim()))
+        .filter(c => c)
+      
+      if (!sanitizedTitle || !sanitizedDescription) {
         throw new Error("Title and description are required")
       }
       
+      if (sanitizedTitle.length > 200) {
+        throw new Error("Title is too long (maximum 200 characters)")
+      }
+      
+      if (sanitizedDescription.length > 5000) {
+        throw new Error("Description is too long (maximum 5000 characters)")
+      }
+      
+      if (sanitizedComponents.length > 20) {
+        throw new Error("Too many components (maximum 20)")
+      }
+      
       const outageData = {
-        title,
-        description,
+        title: sanitizedTitle,
+        description: sanitizedDescription,
         status,
-        affectedComponents: components.split(",").map(c => c.trim()).filter(c => c)
+        affectedComponents: sanitizedComponents
       }
       
       if (editingOutageId) {
-        // Update existing outage
         await updateOutage(editingOutageId, outageData, apiKey)
         setSuccess("Outage updated successfully")
       } else {
-        // Create new outage
         await postOutage(outageData, apiKey)
         setSuccess("Outage posted successfully")
       }
       
-      // Reset form
       resetForm()
       
-      // Refresh outages list
       const updatedOutages = await getOutages(true)
       setOutages(updatedOutages)
     } catch (error) {
@@ -102,7 +218,6 @@ export default function OutagesAdminPage() {
     setComponents(outage.affectedComponents.join(", "))
     setEditingOutageId(outage.id)
     
-    // Scroll to form
     document.getElementById("outage-form")?.scrollIntoView({ behavior: "smooth" })
   }
   
@@ -115,7 +230,12 @@ export default function OutagesAdminPage() {
   }
   
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleString()
+    try {
+      return new Date(dateString).toLocaleString()
+    } catch (error) {
+      console.error("Invalid date:", error)
+      return "Invalid date"
+    }
   }
   
   const getStatusBadgeClass = (status: Outage["status"]) => {
@@ -147,6 +267,13 @@ export default function OutagesAdminPage() {
         <div className="max-w-md mx-auto bg-secondary/10 rounded-lg p-6">
           <h1 className="text-2xl font-bold mb-6">Admin Authentication</h1>
           
+          {error && (
+            <div className="bg-red-500/20 rounded-lg p-3 mb-6 flex items-center gap-2">
+              <AlertTriangle className="h-5 w-5 text-red-500 flex-shrink-0" />
+              <p>{error}</p>
+            </div>
+          )}
+          
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label htmlFor="apiKey" className="block text-sm font-medium mb-1">
@@ -165,9 +292,17 @@ export default function OutagesAdminPage() {
             
             <button
               type="submit"
-              className="w-full bg-primary text-white py-2 px-4 rounded-md hover:bg-primary/80 transition-colors"
+              disabled={isValidatingKey}
+              className="w-full bg-primary text-white py-2 px-4 rounded-md hover:bg-primary/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
-              Login
+              {isValidatingKey ? (
+                <>
+                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  Validating...
+                </>
+              ) : (
+                "Login"
+              )}
             </button>
           </form>
         </div>
