@@ -1,6 +1,7 @@
 "use client"
 
 import { PageTransition } from "@/components/page-transition"
+import Link from "next/link"
 
 export default function FAQPage() {
   return (
@@ -44,16 +45,14 @@ export default function FAQPage() {
         <h2>"What features are included in the free version?"</h2>
 
         <p>
-          The free version of Greed includes all core functionality such as moderation commands, utility features,
-          and basic server management tools. This is more than enough for most servers to operate effectively.
+          The free version of Greed includes all core functionality.
         </p>
 
         <h2>"What additional features do I get with premium?"</h2>
 
         <p>
-          Premium subscribers get access to enhanced features like advanced customization options,
-          priority support, increased limits on certain features, and early access to new functionality.
-          These are designed to enhance your experience but are not necessary for the bot's core functionality.
+          Premium subscribers get access to enhanced features like reskinning, ai, and more.
+          You can see the full list of features on the <Link href="/premium">premium page</Link>.
         </p>
       </div>
     </PageTransition>
