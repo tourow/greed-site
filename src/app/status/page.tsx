@@ -10,7 +10,6 @@ import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { getShards, getTotalStats, getCachedShards, getOutages, type ShardData, type Outage } from "@/lib/api/shards"
 import { SlotMachineCounter } from "@/components/slot-machine-counter"
-import { StatusImage } from "@/components/status-image"
 
 export default function StatusPage() {
   const pathname = usePathname()
@@ -457,36 +456,6 @@ export default function StatusPage() {
                 </motion.div>
               )}
 
-              {/* Status Image Section */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="mt-8 mb-8"
-              >
-                <h2 className="text-xl md:text-2xl font-bold mb-4">Status Overview</h2>
-                <div className="bg-secondary/10 rounded-lg p-4 md:p-6">
-                  <div className="flex flex-col items-center">
-                    <div className="w-full max-w-2xl mx-auto">
-                      <StatusImage refreshInterval={10000} />
-                    </div>
-                    <div className="mt-4 text-center">
-                      <p className="text-white/70">
-                        This image shows the real-time status of all Greed services.
-                      </p>
-                      <a 
-                        href={`${process.env.NEXT_PUBLIC_API_URL || "https://api.greed.rocks"}/status/image`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block mt-2 text-primary hover:underline text-sm"
-                      >
-                        Open image in new tab
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-              
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

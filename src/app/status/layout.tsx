@@ -8,6 +8,12 @@ export async function generateMetadata(): Promise<Metadata> {
   const timestamp = Date.now();
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://api.greed.rocks";
   
+  // Ensure the API URL doesn't have a trailing slash
+  const formattedApiUrl = apiUrl.endsWith('/') ? apiUrl.slice(0, -1) : apiUrl;
+  
+  // Create an absolute URL for the image
+  const imageUrl = `${formattedApiUrl}/status/image?t=${timestamp}`;
+  
   return {
     title: "System Status - Greed",
     description: "Check the current status of Greed's services and systems",
@@ -16,18 +22,23 @@ export async function generateMetadata(): Promise<Metadata> {
       description: "Check the current status of Greed's services and systems",
       images: [
         {
-          url: `${apiUrl}/status/image?t=${timestamp}`,
+          url: imageUrl,
           width: 800,
           height: 400,
           alt: "Greed System Status",
         },
       ],
+      type: "website",
     },
     twitter: {
       card: "summary_large_image",
       title: "Greed - System Status",
       description: "Check the current status of Greed's services and systems",
-      images: [`${apiUrl}/status/image?t=${timestamp}`],
+      images: [imageUrl],
+    },
+    // Add refresh metadata to prevent caching
+    other: {
+      "refresh": "30",
     },
   };
 }
@@ -63,19 +74,10 @@ export default function StatusLayout({
               <Link href="/docs" className="hover:text-white transition-colors">
                 Documentation
               </Link>
-              <a 
-                href={`${process.env.NEXT_PUBLIC_API_URL || "https://api.greed.rocks"}/status/image?t=${Date.now()}`} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
-              >
-                Status Image
-              </a>
             </div>
           </div>
           
           <div className="mt-4 text-center text-xs text-white/50">
-            <p>Status image updates automatically. Last refresh: {new Date().toLocaleString()}</p>
           </div>
         </div>
       </footer>
