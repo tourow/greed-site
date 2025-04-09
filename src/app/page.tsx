@@ -372,7 +372,7 @@ export default function Home() {
               <NavButton href="/invite" icon={Share2} label="invite" />
             </motion.div>
             <motion.div variants={item}>
-              <NavButton href="./embed" icon={Shield} label="embed" />
+              <NavButton href="/embed" icon={Shield} label="embed" />
             </motion.div>
           </motion.div>
         </div>
