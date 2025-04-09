@@ -355,7 +355,7 @@ export default function Home() {
               <NavButton href="/commands" icon={Command} label="cmds" />
             </motion.div>
             <motion.div variants={item}>
-              <NavButton href="https://discord.gg/greedbot" icon={MessageSquare} label="discord" />
+              <NavButton href="https://discord.gg/seiko" icon={MessageSquare} label="discord" />
             </motion.div>
             <motion.div variants={item}>
               <NavButton 
